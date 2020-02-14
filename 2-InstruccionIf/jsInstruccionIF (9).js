@@ -2,12 +2,14 @@ function mostrar()
 {
 	//Genero el número RANDOM entre 1 y 10 
 
-	var botom;
+	var numero;
+	var maximo = 10;
+	var minimo = 1;
 
-	var random = Math.random()*10 ;
-	botom = document.getElementById("FormIngreso").value;
+	numero = Math.floor(Math.random()* ((maximo+1)-minimo)+minimo);
 
-	alert (botom + random)
+
+	alert (numero);
 
 
 	 
