@@ -1,25 +1,35 @@
 function mostrar()
 {
 
-	var contador=0;
+	var flag=0;
 	var positivo=0;
 	var negativo=1;
-	var valor;
+	var numero;
 	
 	var respuesta='si';
 
 	do{
-		contador ++;
-		valor = parseInt ( prompt("ingrese numero"));
-		if ( valor >= 0 ){
-		positivo = positivo + valor;
+		numero = parseInt ( prompt("ingrese numero: "));
+
+		while (isNaN(numero)){
+			numero = parseInt ( prompt ("ingrese nuevamente el numero: "));
 		}
+	
+
+		if ( numero >= 0 ){
+		  positivo = positivo + numero;
+		 }
 		else {
-			negativo = negativo * valor;
+			negativo = negativo * numero;
+			flag = 1;
 		}
 		respuesta = prompt("Deseas ingresar otro numero si/no");
 
 	} while (respuesta == "si" || respuesta == "SI");
+
+	if (flag == 0 ){
+		negativo = 0 ;
+	}
 
 
 
