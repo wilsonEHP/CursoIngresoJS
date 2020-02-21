@@ -13,7 +13,8 @@ function CalcularPrecio ()
      var precio = 35 ;
      var cantidad;
      var marca; 
-     var descuento;
+     var descuento ;
+     var procdescuento;
      var preciocondescuento;
 
     cantidad = parseInt(document.getElementById("Cantidad").value);
@@ -23,28 +24,48 @@ function CalcularPrecio ()
     switch (cantidad){
         case 1 :
         case 2 :
-            descuento = 0;
+            procdescuento = 0;
             break;
         case 3 :
             if ( marca == "ArgentinaLuz "){
-                descuento = 15;
+                procdescuento =  15;
             }
             else if ( marca =="FelipeLamparas "){
-                descuento = 10;
+                procdescuento = 10;
             }
             else {
-                descuento = 30 ;
+                procdescuento = 5 ;
             }
             break;
         case 4 :
-            if ( marca == "ArgentinaLuz" ||  marca == "")
+            if ( marca == "ArgentinaLuz" ||  marca == "FelipeLamparas"){
+                procdescuento = 25;
+            }
+            else {
+                procdescuento = 20;
+            }
             break;
+
         case 5 :
-
-
-
+            if ( marca =="ArgentinaLuz"){
+                procdescuento = 40 ;
+            }
+            else {
+                procdescuento = 30 ;
+            }
+            break;
+        default:
+                procdescuento = 50;
+            break;
 
     }
-    // 
-    descuento = precio *  
+
+    // hasta este punto ya sabemos los porcentajes de descuento
+
+    descuento = precio * procdescuento/100;
+    
+    preciocondescuento = precio - descuento;
+    
+    document.getElementById("precioDescuento").value = preciocondescuento;
+ 
 }
