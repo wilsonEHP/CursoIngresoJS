@@ -29,7 +29,7 @@ function mostrar()
 
 	}
 
-	while(respuesta == "si");
+	while(respuesta == "si" || respuesta == "SI");
 
 	document.getElementById("maximo").value = maximo;
 	document.getElementById("minimo").value = minimo;
