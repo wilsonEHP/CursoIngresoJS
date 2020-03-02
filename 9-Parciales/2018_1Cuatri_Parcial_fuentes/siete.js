@@ -8,10 +8,12 @@ function mostrar()
  var promedio;
  var flag = 0 ;
  var cantivarosmayor = 0 ; 
+
  for (var i = 0 ; i < 5 ; i++ ){
     
     nota = parseInt(prompt("ingrese nota :"));
-        while ( nota < 0 || nota > 10 || isNaN(numero));
+
+    while ( nota < 0 || nota > 10 || isNaN(nota));
         {
             nota = parseInt(prompt("error. ingrese nota :"));
         }
